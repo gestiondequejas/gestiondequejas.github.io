@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tema 1 - Protección al Consumidor</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(to bottom, #e3f2fd, #90caf9, #42a5f5);
+      padding: 2rem;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #333;
+    }
+
+    .carousel-container {
+      max-width: 900px;
+      height: 600px;
+      margin: 0 auto 2rem auto;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .carousel-item img {
+      object-fit: contain;
+      height: 100%;
+      width: 100%;
+      filter: brightness(0.85);
+      background-color: #000;
+    }
+
+    .carousel-caption {
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 15px;
+      padding: 1rem;
+    }
+
+   .btn-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  animation: flotar 2.5s ease-in-out infinite;
+}
+@keyframes flotar {
+  0%   { transform: translateY(0px); }
+  50%  { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+.floating-button {
+  animation: float 3s ease-in-out infinite;
+}
+
+
+    header h1 {
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+  font-weight: bold;
+  font-size: 2.8rem;
+}
+
+header p {
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+  font-size: 1.2rem;
+}
+
+    header {
+      text-align: center;
+      color: white;
+      margin-bottom: 2rem;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: rgba(255, 255, 255, 0.5);
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+
+    nav button {
+      padding: 1rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      margin: 0 1rem;
+      transition: border-bottom 0.3s;
+    }
+
+    nav button.active {
+      border-bottom: 3px solid #0d6efd;
+      font-weight: bold;
+      color: #0d6efd;
+    }
+
+    .contenido {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      min-height: 400px;
+    }
+
+    .seccion {
+      display: none;
+    }
+
+    .seccion.active {
+      display: block;
+    }
+
+    h2 {
+      color: #0d6efd;
+    }
+
+    .ejemplo {
+      background-color: #f0f0f0;
+      padding: 0.8rem;
+      border-left: 5px solid #0d6efd;
+      margin: 1rem 0;
+    }
+#juego-interactivo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.centered-box {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 600px;
+  width: 100%;
+}
+
+.kahoot-link {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #f7b733;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+.kahoot-link:hover {
+  background-color: #f39c12;
+}
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Tema 1: Marco Normativo en Defensa del Consumidor</h1>
+    <p class="text-light">Realizado por Tomás Casey Aranda</p>
+  </header>
+
+  <div class="carousel-container">
+    <div id="tema1Carousel" class="carousel slide h-100" data-bs-ride="carousel">
+      <div class="carousel-inner h-100">
+
+        <!-- Slide 1 -->
+        <div class="carousel-item active h-100">
+          <img src="https://agencia.mipymesdigital.com/wp-content/uploads/2023/11/Diez-Leyes-y-Normas-que-Debes-Conocer-si-Eres-Emprendedor-1.jpg" alt="Leyes de consumo">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>¿Quién hace las leyes de consumo?</h5>
+            <p>Desde las Cortes Generales hasta los ayuntamientos, diferentes niveles crean normas para protegernos como consumidores.</p>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item h-100">
+          <img src="https://cashlogy.com/wp-content/uploads/2021/11/tipos-de-consumidor-y-soluciones-eficientes.jpg" alt="Derechos del consumidor">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Derechos básicos del consumidor</h5>
+            <p>Salud, protección económica, información, indemnización y más. Conócelos para defenderlos.</p>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-item h-100">
+          <img src="https://www.unir.net/wp-content/uploads/2021/11/cabeceraderecho-min.jpg" alt="Derecho a la información">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Derecho a la información</h5>
+            <p>Debes recibir información clara, veraz y visible antes de comprar o contratar un servicio.</p>
+          </div>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="carousel-item h-100">
+          <img src="https://educahistoria.com/wp-content/uploads/2023/08/flag-of-the-european-union-2022-11-14-02-09-04-utc-1080x675.jpg" alt="Unión Europea y consumo">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>¿Qué hace Europa por ti?</h5>
+            <p>La Unión Europea crea normas comunes para proteger tus derechos incluso en compras internacionales.</p>
+          </div>
+        </div>
+
+        <!-- Slide 5 -->
+        <div class="carousel-item h-100">
+          <img src="https://media-edg.barcelona.cat/wp-content/uploads/2024/02/29131921/Captura-de-pantalla-2024-02-29-a-les-13.19.16-760x428.png" alt="Organismos de ayuda al consumidor">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Organismos que te ayudan</h5>
+            <p>OMIC, FACUA, la Junta Arbitral... hay muchas instituciones listas para ayudarte si tienes un problema.</p>
+          </div>
+        </div>
+
+        <!-- Slide 6 -->
+        <div class="carousel-item h-100">
+          <img src="https://bbmabogados.es/wp-content/uploads/2020/10/ley-organica-proteccion-datos-santander.jpg" alt="LOPD y transparencia">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Leyes clave: LOPD y Transparencia</h5>
+            <p>La protección de tus datos y el acceso a información pública también forman parte de tus derechos como ciudadano.</p>
+          </div>
+        </div>
+
+        <!-- Slide 7 -->
+        <div class="carousel-item h-100">
+          <img src="https://basmo.app/wp-content/uploads/2021/10/how-to-write-a-book-summary-1-1024x579.gif" alt="Resumen del tema">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Resumen del Tema 1</h5>
+            <p>Hay muchas leyes y recursos que te protegen como consumidor. Conocerlos es tu mejor defensa.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Controles -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#tema1Carousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#tema1Carousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Pestañas -->
+  <nav>
+    <button class="tab active" onclick="mostrarSeccion(0)">Leyes y competencias</button>
+    <button class="tab" onclick="mostrarSeccion(1)">Derechos del consumidor</button>
+    <button class="tab" onclick="mostrarSeccion(2)">Normativa y organismos</button>
+    <button class="tab" onclick="mostrarSeccion(3)">Leyes clave</button>
+    <button class="tab" onclick="mostrarSeccion(4)">Juego interactivo</button>
+    
+  </nav>
+
+  <!-- Contenido -->
+  <div class="contenido">
+    <div class="seccion active">
+      <h2>¿Quién hace las leyes que nos protegen?</h2>
+      <ul>
+        <li><strong>A nivel nacional:</strong> Las Cortes Generales hacen leyes generales.</li>
+        <li><strong>A nivel autonómico:</strong> Las Comunidades Autónomas adaptan las normas a su población.</li>
+        <li><strong>A nivel local:</strong> Los ayuntamientos pueden establecer normas locales.</li>
+      </ul>
+      <div class="ejemplo">
+        <strong>Ejemplo:</strong> El Ayuntamiento de Málaga puede exigir que los restaurantes indiquen los alérgenos en sus menús.
+      </div>
+      
+      <!-- Imagen con borde sombreado y redondeado -->
+      <div class="imagen-ejemplo">
+        <img src="https://estaticos-cdn.prensaiberica.es/clip/8ea40f49-84e2-4b65-b742-bd8aaf7bfd3e_alta-libre-aspect-ratio_default_0.jpg" alt="Ejemplo de alérgenos en menú" class="img-fluid">
+      </div>
+      
+      <style>
+        .imagen-ejemplo {
+          margin-top: 1rem;
+          padding: 1rem;
+          border-radius: 12px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          background-color: #f0f0f0;
+          text-align: center;
+        }
+      
+        .imagen-ejemplo img {
+          border-radius: 8px;
+          width: 100%;
+          max-width: 800px;
+        }
+      </style>
+      
+    </div>
+
+    <div class="seccion">
+      <h2>Derechos básicos del consumidor</h2>
+      <ul>
+        <li><strong>Salud y seguridad:</strong> No pueden venderte productos peligrosos.</li>
+        <div class="ejemplo">🧸 Si un juguete no advierte sobre piezas pequeñas, puedes reclamar.</div>
+
+<!-- Imagen con borde sombreado y redondeado (más pequeña) -->
+<div class="imagen-ejemplo">
+  <img src="https://s1.abcstatics.com/media/familia/2020/12/10/juguetes-kKIE--1248x698@abc.jpg" alt="Ejemplo de juguete peligroso" class="img-fluid">
+</div>
+
+<style>
+  .imagen-ejemplo {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f0f0f0;
+    text-align: center;
+    max-width: 300px; /* Limita el tamaño de la imagen */
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .imagen-ejemplo img {
+    border-radius: 8px;
+    width: 100%;
+    max-width: 250px; /* Tamaño más pequeño */
+  }
+</style>
+
+
+        <li><strong>Protección económica:</strong> No pueden aprovecharse de ti.</li>
+        <div class="ejemplo">💸 Si tu tarifa telefónica sube sin aviso, puedes reclamar.</div>
+        <div class="imagen-ejemplo">
+          <img src="https://d2yoo3qu6vrk5d.cloudfront.net/pulzo-lite/images-resized/PP4063917A-h-o.webp" alt="Ejemplo de juguete peligroso" class="img-fluid">
+        </div>
+        
+        <style>
+          .imagen-ejemplo {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #f0f0f0;
+            text-align: center;
+            max-width: 300px; /* Limita el tamaño de la imagen */
+            margin-left: auto;
+            margin-right: auto;
+          }
+        
+          .imagen-ejemplo img {
+            border-radius: 8px;
+            width: 100%;
+            max-width: 250px; /* Tamaño más pequeño */
+          }
+        </style>
+
+        <li><strong>Indemnización:</strong> Si un servicio falla, puedes pedir compensación.</li>
+        <div class="ejemplo">🛠️ Una reforma mal hecha puede ser reclamada.</div>
+        <div class="imagen-ejemplo">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQ-t0HyHz0gcRxl4VEsPoWt5zS0sWcOD2eQw&s" alt="Ejemplo de juguete peligroso" class="img-fluid">
+        </div>
+        
+        <style>
+          .imagen-ejemplo {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #f0f0f0;
+            text-align: center;
+            max-width: 300px; /* Limita el tamaño de la imagen */
+            margin-left: auto;
+            margin-right: auto;
+          }
+        
+          .imagen-ejemplo img {
+            border-radius: 8px;
+            width: 100%;
+            max-width: 250px; /* Tamaño más pequeño */
+          }
+        </style>
+
+        <li><strong>Información:</strong> Debes tener información clara antes de comprar.</li>
+        <div class="ejemplo">🏷️ Si los gastos de envío no se indican bien en una tienda online, se vulnera tu derecho.</div>
+        <div class="imagen-ejemplo">
+          <img src="https://estaticosgn-cdn.deia.eus/clip/705f0067-3ce5-4ea1-bc47-ab6b1570ef54_16-9-discover-aspect-ratio_default_0_x608y355.jpg" alt="Ejemplo de juguete peligroso" class="img-fluid">
+        </div>
+        
+        <style>
+          .imagen-ejemplo {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #f0f0f0;
+            text-align: center;
+            max-width: 300px; /* Limita el tamaño de la imagen */
+            margin-left: auto;
+            margin-right: auto;
+          }
+        
+          .imagen-ejemplo img {
+            border-radius: 8px;
+            width: 100%;
+            max-width: 250px; /* Tamaño más pequeño */
+          }
+        </style>
+
+        <li><strong>Participación:</strong> Puedes formar parte de asociaciones de consumidores.</li>
+        <div class="ejemplo">🗣️ FACUA o la OCU defienden derechos ante abusos.</div>
+        <div class="imagen-ejemplo">
+          <img src="https://cms.facua.org/wp-content/uploads/2023/12/og-image-77687.png" alt="Ejemplo de juguete peligroso" class="img-fluid">
+        </div>
+        
+        <style>
+          .imagen-ejemplo {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #f0f0f0;
+            text-align: center;
+            max-width: 300px; /* Limita el tamaño de la imagen */
+            margin-left: auto;
+            margin-right: auto;
+          }
+        
+          .imagen-ejemplo img {
+            border-radius: 8px;
+            width: 100%;
+            max-width: 250px; /* Tamaño más pequeño */
+          }
+        </style>
+
+        <li><strong>Reclamación sin juicio:</strong> Puedes reclamar sin pasar por tribunales.</li>
+        <div class="ejemplo">⚖️ El Sistema Arbitral de Consumo te permite resolver conflictos sin pagar abogados.</div>
+        <div class="imagen-ejemplo">
+          <img src="https://media.licdn.com/dms/image/v2/C4E12AQGNFmCJnQOX_A/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1592504672408?e=2147483647&v=beta&t=m3T8VnzSWUQ_trarRcmBTmvSFMzO9dgtYZmPV5e7KBs" alt="Ejemplo de juguete peligroso" class="img-fluid">
+        </div>
+        
+        <style>
+          .imagen-ejemplo {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #f0f0f0;
+            text-align: center;
+            max-width: 300px; /* Limita el tamaño de la imagen */
+            margin-left: auto;
+            margin-right: auto;
+          }
+        
+          .imagen-ejemplo img {
+            border-radius: 8px;
+            width: 100%;
+            max-width: 250px; /* Tamaño más pequeño */
+          }
+        </style>
+      </ul>
+    </div>
+
+    <div class="seccion">
+      <h2>¿Qué es el Código de Consumo?</h2>
+      <p>Es el conjunto de leyes que protegen al consumidor, de origen estatal, autonómico y europeo.</p>
+      <div class="ejemplo">💡 Es como un manual de instrucciones para consumidores y empresas.</div>
+
+      <h2>¿Y Europa?</h2>
+      <p>La UE establece derechos comunes para todos los países miembros.</p>
+      <ul>
+        <li>Productos seguros</li>
+        <li>Información clara</li>
+        <li>Protección económica</li>
+        <li>Apoyo a asociaciones de consumidores</li>
+      </ul>
+
+      <h2>Organismos de ayuda</h2>
+      <ul>
+        <li>Centros Europeos del Consumidor</li>
+        <li>Junta Arbitral Nacional de Consumo</li>
+        <li>FACUA, OCU</li>
+        <li>Direcciones Generales de Consumo</li>
+        <li>OMIC (Oficinas Municipales de Información al Consumidor)</li>
+      </ul>
+      <div class="ejemplo">🏢 Ejemplo: Si un gimnasio no devuelve la cuota, puedes acudir a la OMIC de tu ciudad.</div>
+    </div>
+
+    <div class="seccion">
+      <h2>Otras leyes importantes</h2>
+      <ul>
+        <li><strong>LOPD:</strong> Protege tus datos personales.</li>
+        <div class="ejemplo">🕵️ Si una tienda guarda tu tarjeta sin permiso, puedes denunciar.</div>
+
+        <li><strong>Ley de Transparencia:</strong> Permite saber cómo se usan fondos públicos.</li>
+        <div class="ejemplo">🧾 Puedes consultar en qué gasta el ayuntamiento tu dinero.</div>
+      </ul>
+
+      <h2>En resumen</h2>
+      <p>Como consumidores, no estamos solos. Conocer nuestros derechos y las herramientas para ejercerlos es clave.</p>
+    </div>
+    <div class="seccion">
+      <ul>
+        <section id="juego-interactivo">
+           <div class="centered-box">
+            <h2>Juego interactivo</h2>
+            <p>¡Venga, ahora vamos a jugar, que el #1 se lleva premio!</p>
+            <a href="https://kahoot.it/" target="_blank" class="kahoot-link">Acceder al Kahoot</a>
+          </div>
+        </section>
+    </div>
+  </div>
+
+  <!-- Botón flotante -->
+  <a href="tema2.html" class="btn btn-primary btn-lg btn-float shadow">
+    Tema 2 →
+  </a>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Script pestañas -->
+  <script>
+    const botones = document.querySelectorAll(".tab");
+    const secciones = document.querySelectorAll(".seccion");
+
+    function mostrarSeccion(indice) {
+      botones.forEach(btn => btn.classList.remove("active"));
+      secciones.forEach(sec => sec.classList.remove("active"));
+      botones[indice].classList.add("active");
+      secciones[indice].classList.add("active");
+    }
+  </script>
+</body>
+</html>

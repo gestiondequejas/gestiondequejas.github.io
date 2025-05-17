@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gestión de quejas y reclamaciones</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: white;
+      background-image: url('https://maudestudio.com/wp-content/uploads/2020/03/atencion_cliente.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      opacity: 1;
+      transition: opacity 0.6s ease;
+    }
+
+    .fade-out {
+      opacity: 0;
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 40px;
+      border-radius: 12px;
+      max-width: 800px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+
+    /* Botón flotante animado */
+    .btn-flotante {
+      position: fixed;
+      bottom: 40px;
+      right: 40px;
+      padding: 15px 25px;
+      background: linear-gradient(45deg, #00bcd4, #00ffff);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      font-weight: bold;
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+      cursor: pointer;
+      animation: brillar 2s infinite alternate;
+      transition: transform 0.3s ease;
+      z-index: 1000;
+    }
+
+    .btn-flotante:hover {
+      transform: scale(1.1);
+    }
+
+    @keyframes brillar {
+      from {
+        box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+      }
+      to {
+        box-shadow: 0 0 30px rgba(0, 255, 255, 1);
+      }
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      justify-content: center;
+      align-items: center;
+      animation: fadeIn 0.5s ease;
+    }
+
+    .modal-contenido {
+      background-color: #222;
+      padding: 30px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+      transform: scale(0.8);
+      animation: zoomIn 0.4s ease forwards;
+    }
+
+    .cerrar {
+      color: #fff;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .cerrar:hover {
+      color: #f44336;
+    }
+
+    .btn-modal {
+      display: block;
+      margin: 20px auto;
+      padding: 12px 24px;
+      background-color: #00bcd4;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .btn-modal:hover {
+      background-color: #0097a7;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes zoomIn {
+      from {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <h1>Gestión de quejas y reclamaciones</h1>
+    <p>
+      Bienvenido/a a esta web expositiva sobre la gestión de quejas y reclamaciones en materia de consumo. Aquí encontrarás una explicación clara, visual y práctica de cada tema relacionado con los derechos de los consumidores y las vías para resolver conflictos.
+    </p>
+    <p>
+      Navega por los distintos temas para descubrir ejemplos reales, recursos interactivos, vídeos explicativos y mucho más.
+    </p>
+  </div>
+
+  <!-- Botón flotante -->
+  <button class="btn-flotante" onclick="abrirModal()">Mostrar temas</button>
+
+  <!-- Modal -->
+  <div id="modalTemas" class="modal">
+    <div class="modal-contenido">
+      <span class="cerrar" onclick="cerrarModal()">&times;</span>
+      <h2>Selecciona un grupo de temas</h2>
+      <button class="btn-modal" onclick="redirigirConAnimacion('tema1.html')">Temas 1 al 3</button>
+      <button class="btn-modal" onclick="redirigirConAnimacion('tema4.html')">Temas 4 al 6</button>
+    </div>
+  </div>
+
+  <!-- Script -->
+  <script>
+    function abrirModal() {
+      const modal = document.getElementById('modalTemas');
+      modal.style.display = 'flex';
+    }
+
+    function cerrarModal() {
+      document.getElementById('modalTemas').style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById('modalTemas');
+      if (event.target === modal) {
+        cerrarModal();
+      }
+    }
+
+    function redirigirConAnimacion(url) {
+      document.body.classList.add('fade-out');
+      setTimeout(() => {
+        window.location.href = url;
+      }, 600);
+    }
+  </script>
+</body>
+</html>
