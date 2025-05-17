@@ -146,15 +146,9 @@
   </style>
 </head>
 <body>
-  <div class="overlay">
-    <h1>Gestión de quejas y reclamaciones</h1>
-    <p>
-      Bienvenido/a a esta web expositiva sobre la gestión de quejas y reclamaciones en materia de consumo. Aquí encontrarás una explicación clara, visual y práctica de cada tema relacionado con los derechos de los consumidores y las vías para resolver conflictos.
-    </p>
-    <p>
-      Navega por los distintos temas para descubrir ejemplos reales, recursos interactivos, vídeos explicativos y mucho más.
-    </p>
-  </div>
+<div id="modalBienvenida" class="modal" style="display: flex;"> <div class="modal-contenido"> <h2>Bienvenido/a</h2> <p>Por favor, introduce tu nombre:</p> <input type="text" id="nombreUsuario" placeholder="Tu nombre" style="padding: 10px; width: 80%; border-radius: 6px; border: none;"> <br><br> <button class="btn-modal" onclick="guardarNombre()">Entrar</button> </div> </div>
+  
+  <div class="overlay"> <h1 id="saludo"></h1> <p> Bienvenido/a a esta web expositiva sobre la gestión de quejas y reclamaciones en materia de consumo. Aquí encontrarás una explicación clara, visual y práctica de cada tema relacionado con los derechos de los consumidores y las vías para resolver conflictos. </p> <p> Navega por los distintos temas para descubrir ejemplos reales, recursos interactivos, vídeos explicativos y mucho más. </p> </div>
 
   <!-- Botón flotante -->
   <button class="btn-flotante" onclick="abrirModal()">Mostrar temas</button>
@@ -171,6 +165,11 @@
 
   <!-- Script -->
   <script>
+    <script> // Mostrar saludo si ya hay nombre guardado window.onload = function() 
+    { const nombre = localStorage.getItem('nombreUsuario');
+     if (nombre) { document.getElementById('modalBienvenida').style.display = 'none';
+      document.getElementById('saludo').innerText = `Hola ${nombre},`; } } function guardarNombre() 
+      { const nombre = document.getElementById('nombreUsuario').value.trim(); if (nombre) { localStorage.setItem('nombreUsuario', nombre); document.getElementById('modalBienvenida').style.display = 'none'; document.getElementById('saludo').innerText = `Hola ${nombre},`; } } </script>
     function abrirModal() {
       const modal = document.getElementById('modalTemas');
       modal.style.display = 'flex';
