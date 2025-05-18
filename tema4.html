@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tema 4: Comunicación en Quejas y Reclamaciones</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(to bottom right, #a8e063, #56ab2f);
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .tab-content {
+      background-color: rgba(0, 0, 0, 0.7);
+      border-radius: 15px;
+      padding: 2rem;
+    }
+
+    .nav-tabs .nav-link.active {
+      background-color: #276c1d;
+      color: #fff;
+    }
+    .center-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+
+        .carousel-item {
+      text-align: center;
+      height: 400px;
+      background-color: #222;
+      color: white;
+    }
+    .carousel-item h5 {
+      margin-top: 100px;
+    }
+.carousel-caption {
+  bottom: 30px; /* Sube el contenido desde el borde inferior */
+}
+.carousel-caption .caption-bg {
+  background-color: rgba(0, 0, 0, 0.6);
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 8px;
+  color: #fff;
+  margin-bottom: 5px;
+}
+.boton-flotante {
+  position: fixed;
+  bottom: 20px;
+  padding: 14px 20px;
+  border-radius: 50px;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  border: none;
+  z-index: 999;
+  cursor: pointer;
+  animation: flotar 2.5s ease-in-out infinite, resplandor 1.5s ease-in-out infinite;
+  transition: background-color 0.3s, transform 0.3s;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.5);
+}
+.boton-flotante:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+  transform: scale(1.05);
+}
+/* Esquina izquierda */
+.boton-flotante.izquierda {
+  left: 20px;
+  background: linear-gradient(135deg, #f44336, #ff5722);
+}
+/* Esquina derecha */
+.boton-flotante.derecha {
+  right: 20px;
+  background: linear-gradient(135deg, #4caf50, #8bc34a);
+}
+/* Animación de flotación */
+@keyframes flotar {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+/* Animación de resplandor */
+@keyframes resplandor {
+  0%, 100% {
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 24px rgba(255, 255, 255, 0.8);
+  }
+}
+.titulo-3d {
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: #ffffff;
+  text-shadow:
+    2px 2px 0 #000,
+    4px 4px 0 rgba(0,0,0,0.2);
+  margin-bottom: 0.5rem;
+}
+
+.titulo-2d {
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: #ffffff;
+  text-shadow:
+    2px 2px 0 #000,
+    4px 4px 0 rgba(0,0,0,0.2);
+  margin-bottom: 0.5rem;
+}
+
+.image-box {
+  background-color: #343a40;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+  margin-top: 15px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+.image-box img {
+  width: 560px;          /* Tamaño fijo estándar para todas */
+  height: auto;          /* Mantiene la proporción original */
+  max-height: 350px;     /* Altura máxima para evitar imágenes alargadas */
+  object-fit: contain;   /* Encaja dentro sin recortarse */
+  border-radius: 8px;
+}
+
+.image-box p {
+  color: #fff;
+  margin: 0;
+  max-width: 300px;
+  flex: 1 1 300px;
+}
+    .centered-tabs {
+  display: flex;
+  justify-content: center;
+}
+
+.media-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.media-box img,
+.media-box iframe {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.video-responsive {
+  position: relative;
+  padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+  margin-top: 20px;
+}
+
+.video-responsive iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+
+  </style>
+</head>
+<body>
+  <div class="container py-4">
+    <div class="text-center mb-3">
+      <h1 class="titulo-3d">Tema 4: Comunicación en Quejas y Reclamaciones</h1>
+        <h4 class="titulo-2d"> Realizado por Tomás Casey :D </h4>
+    </div>
+<!-- Botón flotante izquierdo (Tema 2) -->
+<button class="boton-flotante izquierda" onclick="window.location.href='tema3.html'">
+  Tema 3
+</button>
+
+<!-- Botón flotante derecho (Tema 4) -->
+<button class="boton-flotante derecha" onclick="window.location.href='tema5.html'">
+  Tema 5
+</button>
+    <ul class="nav nav-tabs" id="temaTabs" role="tablist">
+  <li class="nav-item" role="presentation">
+    <button class="nav-link active" id="queja-tab" data-bs-toggle="tab" data-bs-target="#queja" type="button" role="tab">¿Qué es una queja?</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="tipos-tab" data-bs-toggle="tab" data-bs-target="#tipos" type="button" role="tab">Tipos de comunicación</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="consultas-tab" data-bs-toggle="tab" data-bs-target="#consultas" type="button" role="tab">Consultas y reclamaciones</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="hoja-tab" data-bs-toggle="tab" data-bs-target="#hoja" type="button" role="tab">Hoja de Reclamaciones</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="comunicacion-tab" data-bs-toggle="tab" data-bs-target="#comunicacion" type="button" role="tab">Cómo comunicarse</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="juego-tab" data-bs-toggle="tab" data-bs-target="#juego" type="button" role="tab">Juego</button>
+  </li>
+</ul>
+
+<!-- CONTENEDOR DE TODAS LAS PESTAÑAS -->
+<div class="tab-content mt-3">
+
+  <!-- QUEJA -->
+  <div class="tab-pane fade show active" id="queja" role="tabpanel">
+    <div class="center-content">
+    <h3>¿Qué es una queja?</h3>
+    <p>Imagina que vas a un restaurante, te atienden mal... (explicación del contenido).</p>
+    <!-- Imagen -->
+    <div class="media-box mt-3">
+      <img src="https://diariocorreo.pe/resizer/x_h3O182nRfrcstp8IIRyb78VbA=/580x330/smart/filters:format(jpeg):quality(75)/arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/RLVJEEQAN5ARVB73JH45XBE6BA.jpg" alt="Ejemplo de queja" class="img-fluid rounded shadow">
+      <p class="text-muted small mt-2">Cliente insatisfecho en un restaurante.</p>
+    </div>
+
+    <!-- Video (con IFRAME de YouTube) -->
+    <div class="media-box mt-4">
+      <iframe width="1280" height="720" src="https://www.youtube.com/embed/5kJ6LZkNCwc" title="Video explicativo de queja" class="rounded shadow" allowfullscreen></iframe>
+      <p class="text-muted small mt-2">Video que muestra una queja en la práctica.</p>
+    </div>
+    </div>
+  </div>
+
+  <!-- TIPOS -->
+  <div class="tab-pane fade" id="tipos" role="tabpanel">
+    <h3>Diferencias entre queja, reclamación y denuncia</h3>
+    <ul>
+      <li><strong>Queja:</strong> No exige compensación. Es para informar un mal servicio.</li>
+      <li><strong>Reclamación:</strong> Buscas que se repare un daño o error.</li>
+      <li><strong>Denuncia:</strong> Cuando la conducta puede ser ilegal o perjudicar a más personas.</li>
+    </ul>
+  </div>
+
+  <!-- CONSULTAS -->
+  <div class="tab-pane fade" id="consultas" role="tabpanel">
+    <h3>Consultas y causas más comunes</h3>
+    <p>Antes de reclamar, muchas veces consultamos dudas. Lo hacemos en organismos o asociaciones de consumidores.</p>
+    <p>Las principales causas de quejas:</p>
+    <ul>
+      <li>Precio mal informado</li>
+      <li>Producto de baja calidad</li>
+      <li>Mal servicio</li>
+    </ul>
+  </div>
+
+  <!-- HOJA -->
+  <div class="tab-pane fade" id="hoja" role="tabpanel">
+    <h3>Hoja de Reclamaciones</h3>
+    <p>Es un documento oficial para formalizar una queja o reclamación.</p>
+    <ul>
+      <li>Debe estar disponible en todos los comercios.</li>
+      <li>Se entrega gratis y sin trabas.</li>
+      <li>Se queda una copia el cliente, otra la empresa y otra la Administración.</li>
+    </ul>
+  </div>
+
+  <!-- COMUNICACION -->
+  <div class="tab-pane fade" id="comunicacion" role="tabpanel">
+    <h3>La clave está en cómo te comunicas</h3>
+    <p>Una buena comunicación es esencial para resolver conflictos de consumo.</p>
+    <ul>
+      <li><strong>Emisor:</strong> Quien envía el mensaje (tú).</li>
+      <li><strong>Receptor:</strong> Quien recibe el mensaje (empresa).</li>
+      <li><strong>Mensaje:</strong> Qué se dice.</li>
+      <li><strong>Canal:</strong> Cómo se dice (presencial, email, teléfono...).</li>
+      <li><strong>Retroalimentación:</strong> La respuesta recibida.</li>
+    </ul>
+    <p>Recuerda que también comunicas con tu tono de voz, gestos, expresiones...</p>
+  </div>
+
+  <!-- JUEGO -->
+  <div class="tab-pane fade" id="juego" role="tabpanel">
+    <h3>Juego Didáctico</h3>
+    <p>Pon a prueba lo que has aprendido jugando.</p>
+    <a href="juego_tema3.html" class="btn btn-success">Jugar ahora</a>
+  </div>
+
+</div>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tema 5: Negociación y resolución de quejas y reclamaciones</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <style>
+    body {
+background: linear-gradient(to bottom, #3f87a6, #ebf8e1);
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .tab-content {
+      background-color: rgba(0, 0, 0, 0.7);
+      border-radius: 15px;
+      padding: 2rem;
+    }
+    .nav-tabs .nav-link.active {
+      background-color: #005f73;
+      color: #fff;
+    }
+    .titulo-3d {
+      font-size: 2.8rem;
+      font-weight: 900;
+      color: #ffffff;
+      text-shadow: 2px 2px 0 #000, 4px 4px 0 rgba(0,0,0,0.2);
+    }
+    .titulo-2d {
+      font-size: 1.8rem;
+      font-weight: 400;
+      color: #ffffff;
+      text-shadow: 2px 2px 0 #000, 4px 4px 0 rgba(0,0,0,0.2);
+    }
+    .image-box {
+      background-color: #343a40;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+      margin-top: 15px;
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      text-align: left;
+    }
+
+    .boton-flotante {
+  position: fixed;
+  bottom: 20px;
+  padding: 14px 20px;
+  border-radius: 50px;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  border: none;
+  z-index: 999;
+  cursor: pointer;
+  animation: flotar 2.5s ease-in-out infinite, resplandor 1.5s ease-in-out infinite;
+  transition: background-color 0.3s, transform 0.3s;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.5);
+}
+.boton-flotante:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+  transform: scale(1.05);
+}
+/* Esquina izquierda */
+.boton-flotante.izquierda {
+  left: 20px;
+  background: linear-gradient(135deg, #f44336, #ff5722);
+}
+/* Esquina derecha */
+.boton-flotante.derecha {
+  right: 20px;
+  background: linear-gradient(135deg, #4caf50, #8bc34a);
+}
+/* Animación de flotación */
+@keyframes flotar {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+/* Animación de resplandor */
+@keyframes resplandor {
+  0%, 100% {
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 24px rgba(255, 255, 255, 0.8);
+  }
+}
+    .image-box img {
+      width: 560px;
+      height: auto;
+      max-height: 350px;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+    .image-box p {
+      color: #fff;
+      margin: 0;
+      max-width: 300px;
+      flex: 1 1 300px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container py-4">
+    <div class="text-center mb-3">
+      <h1 class="titulo-3d">Tema 5: Negociación y Resolución de Quejas</h1>
+      <h4 class="titulo-2d">Realizado por Tomás Casey 🎯</h4>
+    </div>
+
+    <!-- Botón flotante izquierdo (Tema 4) -->
+<button class="boton-flotante izquierda" onclick="window.location.href='tema4.html'">
+  Tema 4
+</button>
+
+<!-- Botón flotante derecho (Tema 6) -->
+<button class="boton-flotante derecha" onclick="window.location.href='tema6.html'">
+  Tema 6
+</button>
+
+    <ul class="nav nav-tabs" id="temaTabs" role="tablist">
+      <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#intro" type="button">¿Por qué negociar?</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#objetivos" type="button">Objetivos de la negociación</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#conversacion" type="button">¿Cómo hablar con el cliente?</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#consumidores" type="button">Tipos de consumidores</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#factores" type="button">Factores que influyen</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#etapas" type="button">Etapas de la negociación</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#resumen" type="button">Resumen</button></li>
+    </ul>
+
+    <div class="tab-content mt-3">
+      <div class="tab-pane fade show active" id="intro">
+        <h3>¿Qué pasa cuando un cliente se queja?</h3>
+        <p>Lo ideal no es ignorarlo ni discutir, sino negociar: entender lo que ha pasado y buscar una solución justa para ambas partes. Así se resuelven los problemas en consumo.</p>
+        <div class="image-box">
+          <img src="https://img.freepik.com/foto-gratis/cliente-insatisfecho-quejandose-camarero_23-2149322287.jpg" alt="Cliente molesto">
+          <p>Una queja bien gestionada puede convertir a un cliente molesto en uno fiel.</p>
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="objetivos">
+        <h3>🎯 ¿Qué se busca con la negociación?</h3>
+        <ul>
+          <li>Llegar a un acuerdo donde todos estén contentos.</li>
+          <li>Fidelizar al cliente.</li>
+          <li>Mejorar la imagen de la empresa.</li>
+          <li>Detectar y corregir errores.</li>
+        </ul>
+        <p><strong>Ejemplo:</strong> Si unas zapatillas llegan defectuosas y la tienda reacciona bien, el cliente vuelve a confiar en ella.</p>
+      </div>
+
+      <div class="tab-pane fade" id="conversacion">
+        <h3>🗣️ ¿Cómo debe ser la conversación?</h3>
+        <ul>
+          <li>Escuchar activamente (mostrar interés).</li>
+          <li>Hacer preguntas claras.</li>
+          <li>Resumir para confirmar comprensión.</li>
+          <li>Ofrecer soluciones razonables.</li>
+        </ul>
+        <p><strong>Ejemplo:</strong> Un café frío → el camarero se disculpa y trae uno nuevo. ¡Negociación rápida!</p>
+      </div>
+
+      <div class="tab-pane fade" id="consumidores">
+        <h3>🔍 Tipos de consumidores</h3>
+        <p><strong>Según cómo compran:</strong></p>
+        <ul>
+          <li>Reflexivo, impulsivo, influenciado...</li>
+        </ul>
+        <p><strong>Según relación con el dinero:</strong></p>
+        <ul>
+          <li>Ahorrador, ostentoso, idealista, arriesgado...</li>
+        </ul>
+        <p>Conocer al cliente ayuda a saber cómo tratarlo mejor.</p>
+      </div>
+
+      <div class="tab-pane fade" id="factores">
+        <h3>🧩 Factores que influyen en la compra</h3>
+        <ul>
+          <li>Cultura, familia y amigos.</li>
+          <li>Personalidad y emociones del momento.</li>
+        </ul>
+        <p><strong>Ejemplo:</strong> Si alguien está de mal humor, puede reaccionar peor a un problema.</p>
+      </div>
+
+      <div class="tab-pane fade" id="etapas">
+        <h3>📑 Etapas de una negociación</h3>
+        <ol>
+          <li><strong>Preparación:</strong> Reunir información, definir lo que se quiere, pensar en soluciones.</li>
+          <li><strong>Desarrollo:</strong> Cada parte explica su versión, se buscan acuerdos.</li>
+          <li><strong>Resolución:</strong> Acuerdo o no. Si no, puede usarse mediación o arbitraje.</li>
+        </ol>
+        <p><strong>Ejemplo:</strong> Una entrada no válida → la empresa devuelve el dinero y regala otra entrada. ¡Acuerdo logrado!</p>
+      </div>
+
+      <div class="tab-pane fade" id="resumen">
+        <h3>🧠 En resumen</h3>
+        <p>Negociar una queja no es pelear, es conversar. Es una oportunidad para mejorar y fidelizar al cliente. Cuando se hace bien, todos ganan.</p>
+        <a href="juego_tema5.html" class="btn btn-primary mt-3">¡Probar el juego del Tema 5!</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

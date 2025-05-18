@@ -5,6 +5,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Gestión de quejas y reclamaciones</title>
   <style>
+    #background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+  transition: opacity 1.5s ease-in-out;
+  opacity: 1;
+}
+.fade {
+  opacity: 0;
+}
+
+#background1, #background2 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+  transition: opacity 2s ease-in-out;
+}
+
+#background1 {
+  opacity: 1;
+}
+
+#background2 {
+  opacity: 0;
+}
+
+
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -31,6 +70,7 @@
       padding: 40px;
       border-radius: 12px;
       max-width: 800px;
+      margin: 20px;
     }
 
     h1 {
@@ -43,7 +83,6 @@
       line-height: 1.6;
     }
 
-    /* Botón flotante animado */
     .btn-flotante {
       position: fixed;
       bottom: 40px;
@@ -66,15 +105,10 @@
     }
 
     @keyframes brillar {
-      from {
-        box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
-      }
-      to {
-        box-shadow: 0 0 30px rgba(0, 255, 255, 1);
-      }
+      from { box-shadow: 0 0 10px rgba(0, 255, 255, 0.3); }
+      to { box-shadow: 0 0 30px rgba(0, 255, 255, 1); }
     }
 
-    /* Modal */
     .modal {
       display: none;
       position: fixed;
@@ -134,64 +168,125 @@
     }
 
     @keyframes zoomIn {
-      from {
-        transform: scale(0.8);
-        opacity: 0;
-      }
-      to {
-        transform: scale(1);
-        opacity: 1;
-      }
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
     }
   </style>
 </head>
 <body>
-<div id="modalBienvenida" class="modal" style="display: flex;"> <div class="modal-contenido"> <h2>Bienvenido/a</h2> <p>Por favor, introduce tu nombre:</p> <input type="text" id="nombreUsuario" placeholder="Tu nombre" style="padding: 10px; width: 80%; border-radius: 6px; border: none;"> <br><br> <button class="btn-modal" onclick="guardarNombre()">Entrar</button> </div> </div>
-  
-  <div class="overlay"> <h1 id="saludo"></h1> <p> Bienvenido/a a esta web expositiva sobre la gestión de quejas y reclamaciones en materia de consumo. Aquí encontrarás una explicación clara, visual y práctica de cada tema relacionado con los derechos de los consumidores y las vías para resolver conflictos. </p> <p> Navega por los distintos temas para descubrir ejemplos reales, recursos interactivos, vídeos explicativos y mucho más. </p> </div>
+<div id="background"></div>
+<div id="background1"></div>
+<div id="background2"></div>
 
-  <!-- Botón flotante -->
-  <button class="btn-flotante" onclick="abrirModal()">Mostrar temas</button>
 
-  <!-- Modal -->
-  <div id="modalTemas" class="modal">
-    <div class="modal-contenido">
-      <span class="cerrar" onclick="cerrarModal()">&times;</span>
-      <h2>Selecciona un grupo de temas</h2>
-      <button class="btn-modal" onclick="redirigirConAnimacion('tema1.html')">Temas 1 al 3</button>
-      <button class="btn-modal" onclick="redirigirConAnimacion('tema4.html')">Temas 4 al 6</button>
-    </div>
+<!-- Modal Bienvenida -->
+<div id="modalBienvenida" class="modal" style="display: flex;">
+  <div class="modal-contenido">
+    <h2>Bienvenido/a</h2>
+    <p>Por favor, introduce tu nombre:</p>
+    <input type="text" id="nombreUsuario" placeholder="Tu nombre" style="padding: 10px; width: 80%; border-radius: 6px; border: none;">
+    <br><br>
+    <button class="btn-modal" onclick="guardarNombre()">Entrar</button>
   </div>
+</div>
 
-  <!-- Script -->
-  <script>
-    <script> // Mostrar saludo si ya hay nombre guardado window.onload = function() 
-    { const nombre = localStorage.getItem('nombreUsuario');
-     if (nombre) { document.getElementById('modalBienvenida').style.display = 'none';
-      document.getElementById('saludo').innerText = `Hola ${nombre},`; } } function guardarNombre() 
-      { const nombre = document.getElementById('nombreUsuario').value.trim(); if (nombre) { localStorage.setItem('nombreUsuario', nombre); document.getElementById('modalBienvenida').style.display = 'none'; document.getElementById('saludo').innerText = `Hola ${nombre},`; } } </script>
-    function abrirModal() {
-      const modal = document.getElementById('modalTemas');
-      modal.style.display = 'flex';
+<!-- Contenido principal -->
+<div class="overlay">
+  <h1 id="saludo"></h1>
+  <p>Bienvenid@ a esta web expositiva sobre la gestión de quejas y reclamaciones en materia de consumo. Aquí encontrarás una explicación clara, visual y práctica de cada tema relacionado con los derechos de los consumidores y las vías para resolver conflictos.</p>
+  <p>Podrás navegar por los distintos temas para descubrir ejemplos reales, recursos interactivos, vídeos explicativos y mucho más.</p>
+</div>
+
+<!-- Botón flotante -->
+<button class="btn-flotante" onclick="abrirModal()">Mostrar temas</button>
+
+<!-- Modal de temas -->
+<div id="modalTemas" class="modal">
+  <div class="modal-contenido">
+    <span class="cerrar" onclick="cerrarModal()">&times;</span>
+    <h2>Selecciona un grupo de temas</h2>
+    <button class="btn-modal" onclick="redirigirConAnimacion('tema1.html')">Temas 1 al 3</button>
+    <button class="btn-modal" onclick="redirigirConAnimacion('tema4.html')">Temas 4 al 6</button>
+  </div>
+</div>
+
+<!-- Scripts -->
+<script>
+  window.onload = function () {
+    const nombre = localStorage.getItem('nombreUsuario');
+    if (nombre) {
+      document.getElementById('modalBienvenida').style.display = 'none';
+      document.getElementById('saludo').innerText = `Hola ${nombre},`;
+    }
+  };
+
+  function guardarNombre() {
+    const nombre = document.getElementById('nombreUsuario').value.trim();
+    if (nombre) {
+      localStorage.setItem('nombreUsuario', nombre);
+      document.getElementById('modalBienvenida').style.display = 'none';
+      document.getElementById('saludo').innerText = `Hola ${nombre},`;
+    }
+  }
+
+  function abrirModal() {
+    document.getElementById('modalTemas').style.display = 'flex';
+  }
+
+  function cerrarModal() {
+    document.getElementById('modalTemas').style.display = 'none';
+  }
+
+  window.onclick = function(event) {
+    const modal = document.getElementById('modalTemas');
+    if (event.target === modal) {
+      cerrarModal();
+    }
+  }
+
+  function redirigirConAnimacion(url) {
+    document.body.classList.add('fade-out');
+    setTimeout(() => {
+      window.location.href = url;
+    }, 600);
+  }
+</script>
+<script>
+  const imagenes = [
+    'https://maudestudio.com/wp-content/uploads/2020/03/atencion_cliente.jpg',
+    'https://www.camarazaragoza.com/wp-content/uploads/2019/10/angry-3233158_1920.jpg',
+    'https://laborumformacion.com/wp-content/uploads/2024/03/Tratamiento-y-Gestion-de-Quejas-y-Reclamaciones.png'
+  ];
+
+  let indice = 0;
+  let activo = true;
+  const fondo1 = document.getElementById('background1');
+  const fondo2 = document.getElementById('background2');
+
+  // Imagen inicial
+  fondo1.style.backgroundImage = `url('${imagenes[0]}')`;
+
+  function cambiarFondoSuave() {
+    const siguiente = (indice + 1) % imagenes.length;
+    const nuevaImagen = imagenes[siguiente];
+
+    if (activo) {
+      fondo2.style.backgroundImage = `url('${nuevaImagen}')`;
+      fondo2.style.opacity = '1';
+      fondo1.style.opacity = '0';
+    } else {
+      fondo1.style.backgroundImage = `url('${nuevaImagen}')`;
+      fondo1.style.opacity = '1';
+      fondo2.style.opacity = '0';
     }
 
-    function cerrarModal() {
-      document.getElementById('modalTemas').style.display = 'none';
-    }
+    activo = !activo;
+    indice = siguiente;
+  }
 
-    window.onclick = function(event) {
-      const modal = document.getElementById('modalTemas');
-      if (event.target === modal) {
-        cerrarModal();
-      }
-    }
+  setInterval(cambiarFondoSuave, 6000); // cada 6 segundos
+</script>
 
-    function redirigirConAnimacion(url) {
-      document.body.classList.add('fade-out');
-      setTimeout(() => {
-        window.location.href = url;
-      }, 600);
-    }
-  </script>
+
 </body>
 </html>

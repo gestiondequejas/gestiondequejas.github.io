@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tema 3 - Mediación y Arbitraje en Consumo</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.2/dist/quartz/bootstrap.min.css">
+  <style>
+    body {
+      background: linear-gradient(to bottom right, #8B0000, #FF6347);
+      color: #fff;
+    }
+    .carousel-item {
+      text-align: center;
+      height: 400px;
+      background-color: #222;
+      color: white;
+    }
+    .carousel-item h5 {
+      margin-top: 100px;
+    }
+.carousel-caption {
+  bottom: 30px; /* Sube el contenido desde el borde inferior */
+}
+.carousel-caption .caption-bg {
+  background-color: rgba(0, 0, 0, 0.6);
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 8px;
+  color: #fff;
+  margin-bottom: 5px;
+}
+.boton-flotante {
+  position: fixed;
+  bottom: 20px;
+  padding: 14px 20px;
+  border-radius: 50px;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  border: none;
+  z-index: 999;
+  cursor: pointer;
+  animation: flotar 2.5s ease-in-out infinite, resplandor 1.5s ease-in-out infinite;
+  transition: background-color 0.3s, transform 0.3s;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.5);
+}
+.boton-flotante:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+  transform: scale(1.05);
+}
+/* Esquina izquierda */
+.boton-flotante.izquierda {
+  left: 20px;
+  background: linear-gradient(135deg, #f44336, #ff5722);
+}
+/* Esquina derecha */
+.boton-flotante.derecha {
+  right: 20px;
+  background: linear-gradient(135deg, #4caf50, #8bc34a);
+}
+/* Animación de flotación */
+@keyframes flotar {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+/* Animación de resplandor */
+@keyframes resplandor {
+  0%, 100% {
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 24px rgba(255, 255, 255, 0.8);
+  }
+}
+
+.titulo-3d {
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: #ffffff;
+  text-shadow:
+    2px 2px 0 #000,
+    4px 4px 0 rgba(0,0,0,0.2);
+  margin-bottom: 0.5rem;
+}
+
+.titulo-2d {
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: #ffffff;
+  text-shadow:
+    2px 2px 0 #000,
+    4px 4px 0 rgba(0,0,0,0.2);
+  margin-bottom: 0.5rem;
+}
+
+.image-box {
+  background-color: #343a40;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+  margin-top: 15px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+.image-box img {
+  width: 560px;          /* Tamaño fijo estándar para todas */
+  height: auto;          /* Mantiene la proporción original */
+  max-height: 350px;     /* Altura máxima para evitar imágenes alargadas */
+  object-fit: contain;   /* Encaja dentro sin recortarse */
+  border-radius: 8px;
+}
+
+.image-box p {
+  color: #fff;
+  margin: 0;
+  max-width: 300px;
+  flex: 1 1 300px;
+}
+
+    .centered-tabs {
+  display: flex;
+  justify-content: center;
+}
+  </style>
+</head>
+<body>
+
+<!-- Botón flotante izquierdo (Tema 2) -->
+<button class="boton-flotante izquierda" onclick="window.location.href='tema2.html'">
+  Tema 2
+</button>
+
+<!-- Botón flotante derecho (Tema 4) -->
+<button class="boton-flotante derecha" onclick="window.location.href='tema4.html'">
+  Tema 4
+</button>
+
+<div class="text-center py-3">
+  <h1 class="titulo-3d">Tema 3: Mediación y Arbitraje en Consumo</h1>
+  <h4 class="titulo-2d"> Realizado por Tomás Casey :D </h4>
+</div>
+
+
+<!-- Navegación de pestañas -->
+<div class="centered-tabs">
+  <ul class="nav nav-tabs" id="temaTabs" role="tablist">
+  <li class="nav-item" role="presentation">
+    <button class="nav-link active" id="arbitros-tab" data-bs-toggle="tab" data-bs-target="#arbitros" type="button" role="tab">Árbitros</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="mediacion-tab" data-bs-toggle="tab" data-bs-target="#mediacion" type="button" role="tab">Mediación</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="principios-tab" data-bs-toggle="tab" data-bs-target="#principios" type="button" role="tab">Principios</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="proceso-tab" data-bs-toggle="tab" data-bs-target="#proceso" type="button" role="tab">Proceso</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="junta-tab" data-bs-toggle="tab" data-bs-target="#junta" type="button" role="tab">Junta Arbitral</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="laudo-tab" data-bs-toggle="tab" data-bs-target="#laudo" type="button" role="tab">Laudo Arbitral</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="juego-tab" data-bs-toggle="tab" data-bs-target="#juego" type="button" role="tab">Juego</button>
+  </li>
+</ul>
+</div>
+
+<div class="tab-content p-4 bg-dark bg-opacity-75" id="temaTabsContent">
+  <div class="tab-pane fade show active" id="arbitros" role="tabpanel">
+    <h3>¿Quiénes pueden ser árbitros?</h3>
+    <p>Los árbitros deben ser personas íntegras y capacitadas, propuestas por organismos públicos o privados. Son como los jueces de los conflictos de consumo.</p>
+    <div class="image-box">
+      <img src="https://img.lavdg.com/sc/qFKmpQyfuYUC21rdob6Gt3OECqw=/480x/2020/02/01/00121580574721079761805/Foto/PF2C5F1_173048.jpg" alt="Ejemplo de árbitros">
+    </div>
+  </div>
+  <div class="tab-pane fade" id="mediacion" role="tabpanel">
+    <h3>¿Qué es la mediación?</h3>
+    <p>Es como sentarse con un amigo imparcial que ayuda a que tú y el vendedor lleguen a un acuerdo, sin juicios y sin líos legales.</p>
+<div class="image-box">
+  <img src="https://martellabogados.es/wp-content/uploads/2023/11/ventajas-mediacion-frente-via-judicial.jpg" alt="Ejemplo de mediación">
+</div>
+
+  </div>
+  <div class="tab-pane fade" id="principios" role="tabpanel">
+    <h3>Principios del consumo</h3>
+    <p>En toda mediación o arbitraje deben cumplirse principios como la imparcialidad, transparencia y eficacia. Como si se tratara de un partido limpio y con reglas claras.</p>
+    <div class="image-box">
+      <img src="https://medias-l1-es.externalnaw.es/medias/ES/img/4/9/7/8/im0002284978.jpg" alt="Principios del arbitraje">
+    </div>
+  </div>
+  <div class="tab-pane fade" id="proceso" role="tabpanel">
+    <h3>Etapas del proceso</h3>
+    <p>Como una película: primero se escucha a las partes, luego se analiza y finalmente se llega a un acuerdo (si es posible).</p>
+    <div class="image-box">
+      <img src="https://lh5.googleusercontent.com/proxy/A3_l-gqYlY0VpRnA55Y1RIQFlgxaijBfWelQiWunYxM3PVMSl3d2pLtHzChkfDdpfzhkVLMk_D6j0tIW8_Lpj6JbsrayGULJdptVQOnqagsLvAebWdLvQVd1yWJPzSb19oXeDQhntg" alt="Etapas del proceso de mediación">
+    </div>
+  </div>
+  <div class="tab-pane fade" id="junta" role="tabpanel">
+    <h3>¿Qué hace la Junta Arbitral?</h3>
+    <p>Es como el árbitro principal del partido, quien organiza todo y hace que se respeten las reglas.</p>
+    <div class="image-box">
+      <img src="https://consumo.ayto-alcaladehenares.es/wp-content/uploads/2020/06/junta-1.jpg" alt="Junta Arbitral de Consumo">
+    </div>
+  </div>
+  <div class="tab-pane fade" id="laudo" role="tabpanel">
+    <h3>¿Qué es un laudo arbitral?</h3>
+    <p>Es la decisión final. Como cuando un árbitro pita el final del partido: lo que diga va a misa y ya no hay más que discutir.</p>
+    <div class="image-box">
+      <img src="https://www.gchnicaragua.com/wp-content/uploads/2024/09/maxresdefault-1-1.jpg" alt="Laudo arbitral">
+    </div>
+  </div>
+  <div class="tab-pane fade" id="juego" role="tabpanel">
+    <h3>Juego Didáctico</h3>
+    <p>Pon a prueba lo que has aprendido jugando.</p>
+    <a href="juego_tema3.html" class="btn btn-success">Jugar ahora</a>
+  </div>
+</div>
+<!-- Carrusel estilizado, rectangular 560x350 -->
+<div class="container my-5">
+  <div class="carousel-wrapper mx-auto shadow-lg rounded-4 p-0" style="width: 560px; height: 350px; overflow: hidden; border-radius: 20px; box-shadow: 0 0 20px rgba(0,0,0,0.2);">
+    <div id="carouselTema3" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+          <img src="https://noticias.juridicas.com/bitmaps/articulos/1661929546.png" class="d-block w-100" style="height: 350px; object-fit: cover;" alt="Slide 1">
+          <div class="carousel-caption d-block">
+            <h5 class="caption-bg">Bienvenido al Tema 3</h5>
+            <p class="caption-bg">Explora la mediación y el arbitraje en el consumo</p>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+          <img src="https://www.caporasoandpartnerslawofficepanama.com/img/articles/Personas_mediaci%C3%B3n.jpeg" class="d-block w-100" style="height: 350px; object-fit: cover;" alt="Slide 2">
+          <div class="carousel-caption d-block">
+            <h5 class="caption-bg">¿Qué es la mediación?</h5>
+            <p class="caption-bg">Un proceso voluntario para llegar a acuerdos</p>
+          </div>
+        </div>
+
+          <div class="carousel-item">
+            <img src="https://martellabogados.es/wp-content/uploads/2024/06/procedimiento-impugnacion-laudo-arbitral.jpg" class="d-block w-100" style="height: 350px; object-fit: cover;" alt="Slide 2">
+            <div class="carousel-caption d-block">
+             <h5 class="caption-bg">¿Quéienes participan?</h5>
+             <p class="caption-bg">El consumidor, la empresa y el mediador</p>
+           </div>
+          </div>
+
+          <div class="carousel-item">
+           <img src="https://cdn77.pressenza.com/wp-content/uploads/2021/03/equidad-720x554.jpg" class="d-block w-100" style="height: 350px; object-fit: cover;" alt="Slide 2">
+            <div class="carousel-caption d-block">
+             <h5 class="caption-bg">Hay varios tipos de arbitraje</h5>
+              <p class="caption-bg">En equidad, en derecho y electrónico.</p>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+           <img src="https://hegel.edu.pe/blog/wp-content/uploads/2020/10/Laudo-Arbitral-dentro-de-las-Contrataciones-del-Estado.jpg" class="d-block w-100" style="height: 350px; object-fit: cover;" alt="Slide 2">
+            <div class="carousel-caption d-block">
+             <h5 class="caption-bg">¿Qué es el Convenio Arbitral?</h5>
+              <p class="caption-bg">Es como un contrato donde las dos partes aceptan resolver sus conflictos a través del arbitraje de consumo.</p>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+           <img src="https://atlascultural.com/wp-content/blogs.dir/34/files/2013/11/dispute.jpg" class="d-block w-100" style="height: 350px; object-fit: cover;" alt="Slide 2">
+            <div class="carousel-caption d-block">
+             <h5 class="caption-bg">¿No estás de acuerdo con el laudo?</h5>
+              <p class="caption-bg">Pues no se puede recurrir, salvo en situaciones muy concretas y graves. El laudo tiene valor de cosa juzgada.</p>
+            </div>
+          </div>
+      </div>
+
+      <!-- Controles -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselTema3" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselTema3" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </div>
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

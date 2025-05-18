@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tema 6: Control de Calidad</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <style>
+    body {
+      background: linear-gradient(to bottom right, #3f87a6, #ebf8e1);
+      color: #000;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .tab-content {
+      background-color: #ffffffdd;
+      border-radius: 15px;
+      padding: 2rem;
+    }
+    .nav-tabs .nav-link.active {
+      background-color: #0d6efd;
+      color: #fff;
+    }
+    .titulo-3d {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: #1a1a1a;
+      text-shadow: 1px 1px 0 #ccc;
+    }
+    .titulo-2d {
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: #333;
+    }
+
+    .boton-flotante {
+  position: fixed;
+  bottom: 20px;
+  padding: 14px 20px;
+  border-radius: 50px;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  border: none;
+  z-index: 999;
+  cursor: pointer;
+  animation: flotar 2.5s ease-in-out infinite, resplandor 1.5s ease-in-out infinite;
+  transition: background-color 0.3s, transform 0.3s;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.5);
+}
+.boton-flotante:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+  transform: scale(1.05);
+}
+/* Esquina izquierda */
+.boton-flotante.izquierda {
+  left: 20px;
+  background: linear-gradient(135deg, #f44336, #ff5722);
+}
+/* Animación de flotación */
+@keyframes flotar {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+/* Animación de resplandor */
+@keyframes resplandor {
+  0%, 100% {
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 24px rgba(255, 255, 255, 0.8);
+  }
+}
+    .image-box {
+      background-color: #e9ecef;
+      padding: 15px;
+      border-radius: 10px;
+      margin-top: 15px;
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      text-align: left;
+    }
+    .image-box img {
+      width: 520px;
+      height: auto;
+      max-height: 350px;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+    .image-box p {
+      margin: 0;
+      max-width: 300px;
+      flex: 1 1 300px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container py-4">
+    <div class="text-center mb-4">
+      <h1 class="titulo-3d">Tema 6: Control de Calidad</h1>
+      <h4 class="titulo-2d">Quejas y Reclamaciones • Tomás Casey</h4>
+    </div>
+
+    <!-- Botón flotante izquierdo (Tema 5) -->
+<button class="boton-flotante izquierda" onclick="window.location.href='tema5.html'">
+  Tema 5
+</button>
+
+    <ul class="nav nav-tabs" id="tema6Tabs" role="tablist">
+      <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#calidad" type="button">¿Qué es el control de calidad?</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#incidencias" type="button">Errores e incidencias</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#reclamos" type="button">Derechos del consumidor</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#medicion" type="button">Medición de la calidad</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#analisis" type="button">Análisis de errores</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#acciones" type="button">Acciones correctivas</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#estadistica" type="button">Uso de estadística</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#resumen" type="button">Resumen</button></li>
+    </ul>
+
+    <div class="tab-content mt-3">
+      <div class="tab-pane fade show active" id="calidad">
+        <h3>¿Qué es el control de calidad?</h3>
+        <p>No se trata solo de si un producto está bien hecho, sino de cómo se trata al cliente cuando hay un problema. Vender no es suficiente: hay que atender bien.</p>
+      </div>
+
+      <div class="tab-pane fade" id="incidencias">
+        <h3>🔧 Anomalías e incidencias</h3>
+        <ul>
+          <li>Error de precio.</li>
+          <li>Producto roto o defectuoso.</li>
+          <li>Tiempo excesivo de espera.</li>
+          <li>Atención inadecuada.</li>
+        </ul>
+        <div class="image-box">
+          <img src="https://img.freepik.com/foto-gratis/cliente-enojado-hablando-soporte_23-2148759261.jpg" alt="Atención al cliente">
+          <p>Una incidencia bien resuelta mejora la experiencia y fideliza.</p>
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="reclamos">
+        <h3>📄 Derechos básicos del consumidor</h3>
+        <ul>
+          <li>Información clara antes de contratar.</li>
+          <li>El producto debe cumplir lo prometido.</li>
+          <li>Opciones si no es conforme: reparación, cambio o devolución.</li>
+        </ul>
+        <p><strong>Plazos:</strong> 2 meses para avisar del fallo. Si ocurre en 6 meses, se supone que ya venía mal.</p>
+      </div>
+
+      <div class="tab-pane fade" id="medicion">
+        <h3>📊 ¿Cómo se mide la calidad?</h3>
+        <ul>
+          <li>Auditorías internas o externas.</li>
+          <li>Encuestas de satisfacción.</li>
+          <li>Indicadores como número de quejas o tiempo de respuesta.</li>
+        </ul>
+        <p><strong>Ejemplo:</strong> Después de una llamada al servicio técnico, se envía una encuesta al cliente para medir su experiencia.</p>
+      </div>
+
+      <div class="tab-pane fade" id="analisis">
+        <h3>🧩 Herramientas para encontrar errores</h3>
+        <ul>
+          <li><strong>Diagrama causa-efecto:</strong> ayuda a detectar el origen del problema.</li>
+          <li><strong>Principio de Pareto:</strong> el 80% de los errores vienen del 20% de causas.</li>
+        </ul>
+        <p>Si se detectan los fallos más repetidos, se pueden corregir más eficientemente.</p>
+      </div>
+
+      <div class="tab-pane fade" id="acciones">
+        <h3>🛠️ Acciones correctivas y preventivas</h3>
+        <ul>
+          <li><strong>Correctiva:</strong> después del problema, para que no se repita.</li>
+          <li><strong>Preventiva:</strong> antes del problema, para evitar que ocurra.</li>
+        </ul>
+        <p><strong>Ejemplo:</strong> Mejorar servidores web tras quejas (correctiva) o embalar mejor un producto para evitar fallos (preventiva).</p>
+      </div>
+
+      <div class="tab-pane fade" id="estadistica">
+        <h3>📉 ¿Y la estadística?</h3>
+        <p>Ayuda a entender los datos, medir mejoras y tomar decisiones. Por ejemplo:</p>
+        <ul>
+          <li>Cantidad de reclamaciones.</li>
+          <li>Tipos más frecuentes.</li>
+          <li>Satisfacción promedio de los clientes.</li>
+        </ul>
+        <p>Sirve para ver si una empresa está mejorando o no.</p>
+      </div>
+
+      <div class="tab-pane fade" id="resumen">
+        <h3>🧠 En resumen</h3>
+        <p>El control de calidad en reclamaciones es clave para mejorar el servicio, resolver problemas y fidelizar clientes. Escuchar, analizar y actuar es la clave para una empresa excelente.</p>
+        <a href="juego_tema6.html" class="btn btn-success mt-3">¡Juega y repasa el Tema 6!</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
