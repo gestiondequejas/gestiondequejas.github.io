@@ -4,13 +4,43 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Tema 5: Negociación y resolución de quejas y reclamaciones</title>
+  <link rel="icon" type="image/png" href="favicon.png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
   <style>
-    body {
-background: linear-gradient(to bottom, #3f87a6, #ebf8e1);
-      color: #fff;
-      font-family: 'Segoe UI', sans-serif;
-    }
+.tab-content,
+.tab-content h1,
+.tab-content h2,
+.tab-content h3,
+.tab-content h4,
+.tab-content p,
+.tab-content li,
+.tab-content span {
+  color: #ffffff !important;
+}
+/* Fondo general */
+body {
+  background: url('https://www.esan.edu.pe/images/blog/2015/06/04/negociacion-conflictos-figura-principal.jpg') no-repeat center center fixed;
+  background-size: cover;
+  background-color: #f5fafd;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  z-index: 0;
+}
+
+/* Capa superpuesta semitransparente para oscurecer */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* Capa negra semitransparente */
+  z-index: -1;
+}
+
+
     .tab-content {
       background-color: rgba(0, 0, 0, 0.7);
       border-radius: 15px;
@@ -20,6 +50,47 @@ background: linear-gradient(to bottom, #3f87a6, #ebf8e1);
       background-color: #005f73;
       color: #fff;
     }
+
+    /* Centrar la barra de navegación */
+.nav-tabs {
+  justify-content: center;
+  background-color: #0d1b2a; /* Azul muy oscuro */
+  border-bottom: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra elegante */
+  border-radius: 12px;
+  padding: 10px;
+}
+
+/* Estilo base de las pestañas */
+.nav-tabs .nav-link {
+  color: white;
+  font-weight: 600;
+  background-color: transparent;
+  border: none;
+  margin: 0 5px;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+/* Al pasar el cursor */
+.nav-tabs .nav-link:hover {
+  background-color: #1c2e4a; /* Azul más claro al hacer hover */
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Al hacer clic (pestaña activa) */
+.nav-tabs .nav-link.active {
+  background-color: #27496d; /* Azul medio para pestaña activa */
+  color: white;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
+  transform: scale(0.98);
+  transition: all 0.1s ease;
+}
+
+
     .titulo-3d {
       font-size: 2.8rem;
       font-weight: 900;
@@ -107,8 +178,8 @@ background: linear-gradient(to bottom, #3f87a6, #ebf8e1);
 <body>
   <div class="container py-4">
     <div class="text-center mb-3">
-      <h1 class="titulo-3d">Tema 5: Negociación y Resolución de Quejas</h1>
-      <h4 class="titulo-2d">Realizado por Tomás Casey 🎯</h4>
+      <h1 class="titulo-3d">Tema 5: Negociación y Resolución de Quejas 🎯</h1>
+      <h4 class="titulo-2d">Realizado por Tomás Casey😊</h4>
     </div>
 
     <!-- Botón flotante izquierdo (Tema 4) -->
@@ -123,17 +194,17 @@ background: linear-gradient(to bottom, #3f87a6, #ebf8e1);
 
     <ul class="nav nav-tabs" id="temaTabs" role="tablist">
       <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#intro" type="button">¿Por qué negociar?</button></li>
-      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#objetivos" type="button">Objetivos de la negociación</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#objetivos" type="button">Objetivos</button></li>
       <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#conversacion" type="button">¿Cómo hablar con el cliente?</button></li>
       <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#consumidores" type="button">Tipos de consumidores</button></li>
-      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#factores" type="button">Factores que influyen</button></li>
-      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#etapas" type="button">Etapas de la negociación</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#factores" type="button">Factores</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#etapas" type="button">Etapas</button></li>
       <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#resumen" type="button">Resumen</button></li>
     </ul>
 
     <div class="tab-content mt-3">
       <div class="tab-pane fade show active" id="intro">
-        <h3>¿Qué pasa cuando un cliente se queja?</h3>
+        <h3 class="titulo-2d">💀¿Qué pasa cuando un cliente se queja?</h3>
         <p>Lo ideal no es ignorarlo ni discutir, sino negociar: entender lo que ha pasado y buscar una solución justa para ambas partes. Así se resuelven los problemas en consumo.</p>
         <div class="image-box">
           <img src="https://img.freepik.com/foto-gratis/cliente-insatisfecho-quejandose-camarero_23-2149322287.jpg" alt="Cliente molesto">
@@ -142,7 +213,7 @@ background: linear-gradient(to bottom, #3f87a6, #ebf8e1);
       </div>
 
       <div class="tab-pane fade" id="objetivos">
-        <h3>🎯 ¿Qué se busca con la negociación?</h3>
+        <h3 class="titulo-2d">🎯 ¿Qué se busca con la negociación?</h3>
         <ul>
           <li>Llegar a un acuerdo donde todos estén contentos.</li>
           <li>Fidelizar al cliente.</li>
@@ -153,7 +224,7 @@ background: linear-gradient(to bottom, #3f87a6, #ebf8e1);
       </div>
 
       <div class="tab-pane fade" id="conversacion">
-        <h3>🗣️ ¿Cómo debe ser la conversación?</h3>
+        <h3 class="titulo-2d">🗣️ ¿Cómo debe ser la conversación?</h3>
         <ul>
           <li>Escuchar activamente (mostrar interés).</li>
           <li>Hacer preguntas claras.</li>
@@ -164,7 +235,7 @@ background: linear-gradient(to bottom, #3f87a6, #ebf8e1);
       </div>
 
       <div class="tab-pane fade" id="consumidores">
-        <h3>🔍 Tipos de consumidores</h3>
+        <h3 class="titulo-2d">🔍 Tipos de consumidores</h3>
         <p><strong>Según cómo compran:</strong></p>
         <ul>
           <li>Reflexivo, impulsivo, influenciado...</li>
@@ -177,7 +248,7 @@ background: linear-gradient(to bottom, #3f87a6, #ebf8e1);
       </div>
 
       <div class="tab-pane fade" id="factores">
-        <h3>🧩 Factores que influyen en la compra</h3>
+        <h3 class="titulo-2d">🧩 Factores que influyen en la compra</h3>
         <ul>
           <li>Cultura, familia y amigos.</li>
           <li>Personalidad y emociones del momento.</li>
@@ -186,7 +257,7 @@ background: linear-gradient(to bottom, #3f87a6, #ebf8e1);
       </div>
 
       <div class="tab-pane fade" id="etapas">
-        <h3>📑 Etapas de una negociación</h3>
+        <h3 class="titulo-2d">📑 Etapas de una negociación</h3>
         <ol>
           <li><strong>Preparación:</strong> Reunir información, definir lo que se quiere, pensar en soluciones.</li>
           <li><strong>Desarrollo:</strong> Cada parte explica su versión, se buscan acuerdos.</li>
@@ -196,9 +267,9 @@ background: linear-gradient(to bottom, #3f87a6, #ebf8e1);
       </div>
 
       <div class="tab-pane fade" id="resumen">
-        <h3>🧠 En resumen</h3>
+        <h3 class="titulo-2d">🧠 En resumen</h3>
         <p>Negociar una queja no es pelear, es conversar. Es una oportunidad para mejorar y fidelizar al cliente. Cuando se hace bien, todos ganan.</p>
-        <a href="juego_tema5.html" class="btn btn-primary mt-3">¡Probar el juego del Tema 5!</a>
+        <a href="https://wordwall.net/resource/92355758/tema-5-negociaci%c3%b3n-y-resoluci%c3%b3n-de-quejas" class="btn btn-primary mt-3">¡Probar el juego del Tema 5!</a>
       </div>
     </div>
   </div>

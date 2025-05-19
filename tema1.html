@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Tema 1 - Protección al Consumidor</title>
+  <link rel="icon" type="image/png" href="favicon.png">
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
@@ -45,6 +46,15 @@
   z-index: 1000;
   animation: flotar 2.5s ease-in-out infinite;
 }
+
+.btn-float-left {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1000;
+  animation: flotar 2.5s ease-in-out infinite;
+}
+
 @keyframes flotar {
   0%   { transform: translateY(0px); }
   50%  { transform: translateY(-8px); }
@@ -52,6 +62,19 @@
 }
 .floating-button {
   animation: float 3s ease-in-out infinite;
+}
+
+.btn-danger {
+  background: linear-gradient(to bottom, #ff8a80, #c62828);
+  border: none;
+  color: white;
+  font-weight: bold;
+  transition: transform 0.2s ease;
+}
+
+.btn-danger:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 
@@ -162,7 +185,7 @@ header p {
 
   <header>
     <h1>Tema 1: Marco Normativo en Defensa del Consumidor🛡️</h1>
-    <p class="text-light">Realizado por Tomás Casey </p>
+    <p class="text-light">Realizado por Tomás Casey😊 </p>
   </header>
 
   <div class="carousel-container">
@@ -509,6 +532,10 @@ header p {
   <a href="tema2.html" class="btn btn-danger btn-lg btn-float shadow">
     Tema 2 →
   </a>
+      <!-- Botón flotante izquierdo (Inicio) -->
+  <a href="index.html" class="btn btn-danger btn-lg btn-float-left shadow">
+  ← Inicio
+</a>
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

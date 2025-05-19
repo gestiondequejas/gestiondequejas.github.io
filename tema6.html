@@ -4,13 +4,32 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Tema 6: Control de Calidad</title>
+  <link rel="icon" type="image/png" href="favicon.png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
   <style>
-    body {
-      background: linear-gradient(to bottom right, #3f87a6, #ebf8e1);
-      color: #000;
-      font-family: 'Segoe UI', sans-serif;
-    }
+/* Fondo general */
+body {
+  background: url('https://mylims.net/wp-content/uploads/2023/09/MicrosoftTeams-image-174-scaled-1.jpg.webp') no-repeat center center fixed;
+  background-size: cover;
+  background-color: #f5fafd;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  z-index: 0;
+}
+
+/* Capa superpuesta semitransparente para aclarar */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.3); /* Capa blanca semitransparente */
+  z-index: -1;
+}
+
     .tab-content {
       background-color: #ffffffdd;
       border-radius: 15px;
@@ -20,6 +39,47 @@
       background-color: #0d6efd;
       color: #fff;
     }
+
+/* Centrar la barra de navegación */
+.nav-tabs {
+  justify-content: center;
+  background-color: #b68600; /* Dorado oscuro */
+  border-bottom: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  padding: 10px;
+}
+
+/* Estilo base de las pestañas */
+.nav-tabs .nav-link {
+  color: white;
+  font-weight: 600;
+  background-color: transparent;
+  border: none;
+  margin: 0 5px;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+/* Hover */
+.nav-tabs .nav-link:hover {
+  background-color: #d4a017; /* Dorado más claro */
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Pestaña activa */
+.nav-tabs .nav-link.active {
+  background-color: #e0b32d; /* Dorado claro para activa */
+  color: white;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
+  transform: scale(0.98);
+  transition: all 0.1s ease;
+}
+
+
     .titulo-3d {
       font-size: 2.8rem;
       font-weight: 800;
@@ -27,8 +87,8 @@
       text-shadow: 1px 1px 0 #ccc;
     }
     .titulo-2d {
-      font-size: 1.5rem;
-      font-weight: 400;
+      font-size: 1.6rem;
+      font-weight: 700;
       color: #333;
     }
 
@@ -99,8 +159,8 @@
 <body>
   <div class="container py-4">
     <div class="text-center mb-4">
-      <h1 class="titulo-3d">Tema 6: Control de Calidad</h1>
-      <h4 class="titulo-2d">Quejas y Reclamaciones • Tomás Casey</h4>
+      <h1 class="titulo-3d">Tema 6: Control de Calidad🔎</h1>
+      <h4 class="titulo-2d">Quejas y Reclamaciones • Tomás Casey😊</h4>
     </div>
 
     <!-- Botón flotante izquierdo (Tema 5) -->
@@ -109,19 +169,19 @@
 </button>
 
     <ul class="nav nav-tabs" id="tema6Tabs" role="tablist">
-      <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#calidad" type="button">¿Qué es el control de calidad?</button></li>
-      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#incidencias" type="button">Errores e incidencias</button></li>
-      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#reclamos" type="button">Derechos del consumidor</button></li>
-      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#medicion" type="button">Medición de la calidad</button></li>
-      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#analisis" type="button">Análisis de errores</button></li>
-      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#acciones" type="button">Acciones correctivas</button></li>
-      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#estadistica" type="button">Uso de estadística</button></li>
+      <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#calidad" type="button">Controlar de calidad</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#incidencias" type="button">Errores</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#reclamos" type="button">Derechos</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#medicion" type="button">Medir la calidad</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#analisis" type="button">Análisis</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#acciones" type="button">Correcciones</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#estadistica" type="button">Estadística</button></li>
       <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#resumen" type="button">Resumen</button></li>
     </ul>
 
     <div class="tab-content mt-3">
       <div class="tab-pane fade show active" id="calidad">
-        <h3>¿Qué es el control de calidad?</h3>
+        <h3>🤖 ¿Qué es el control de calidad?</h3>
         <p>No se trata solo de si un producto está bien hecho, sino de cómo se trata al cliente cuando hay un problema. Vender no es suficiente: hay que atender bien.</p>
       </div>
 
@@ -191,7 +251,7 @@
       <div class="tab-pane fade" id="resumen">
         <h3>🧠 En resumen</h3>
         <p>El control de calidad en reclamaciones es clave para mejorar el servicio, resolver problemas y fidelizar clientes. Escuchar, analizar y actuar es la clave para una empresa excelente.</p>
-        <a href="juego_tema6.html" class="btn btn-success mt-3">¡Juega y repasa el Tema 6!</a>
+        <a href="https://wordwall.net/resource/92360063/tema-6-control-de-calidad" class="btn btn-success mt-3">¡Juega y repasa el Tema 6!</a>
       </div>
     </div>
   </div>

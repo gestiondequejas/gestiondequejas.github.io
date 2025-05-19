@@ -4,10 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tema 4: Comunicación en Quejas y Reclamaciones</title>
+  <link rel="icon" type="image/png" href="favicon.png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body {
-      background: linear-gradient(to bottom right, #a8e063, #56ab2f);
+    background: url('https://images.unsplash.com/photo-1600206287932-4b8888bd78f6?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fG5hdHVyYWxlemElMjB2ZXJkZXxlbnwwfHwwfHx8MA%3D%3Dhttps://wallpapers.com/images/hd/green-landscape-1920-x-1200-wallpaper-1l8f8w08rgeiq19i.jpg');
+    background-color: #f5fafd;
       color: #fff;
       font-family: 'Segoe UI', sans-serif;
     }
@@ -16,6 +18,44 @@
       border-radius: 15px;
       padding: 2rem;
     }
+/* Centrar la barra de navegación */
+.nav-tabs {
+  justify-content: center;
+  background-color: #14532d; /* Verde oscuro */
+  border-bottom: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra elegante */
+  border-radius: 12px;
+  padding: 10px;
+}
+
+/* Estilo base de las pestañas */
+.nav-tabs .nav-link {
+  color: white;
+  font-weight: 600;
+  background-color: transparent;
+  border: none;
+  margin: 0 5px;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+/* Al pasar el cursor */
+.nav-tabs .nav-link:hover {
+  background-color: #1a6d3b; /* Verde un poco más claro */
+  transform: scale(1.05); /* Agrandar ligeramente */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra leve */
+}
+
+/* Al hacer clic (activa) */
+.nav-tabs .nav-link.active {
+  background-color: #1c7c46; /* Verde más claro para distinguir */
+  color: white;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2); /* Efecto hundido */
+  transform: scale(0.98); /* Ligera reducción como pulsado */
+  transition: all 0.1s ease;
+}
 
     .nav-tabs .nav-link.active {
       background-color: #276c1d;
@@ -28,8 +68,30 @@
   text-align: center;
 }
 
+.center-tab-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+}
 
-        .carousel-item {
+.center-tab-content ul {
+    list-style-type: none;
+  list-style-position: inside;
+  padding-left: 0;
+  text-align: center;
+}
+
+.custom-list {
+  list-style-type: none;
+  padding-left: 0;
+  text-align: center;
+}
+.custom-list li {
+  margin-bottom: 10px;
+}
+
+    .carousel-item {
       text-align: center;
       height: 400px;
       background-color: #222;
@@ -187,8 +249,8 @@
 <body>
   <div class="container py-4">
     <div class="text-center mb-3">
-      <h1 class="titulo-3d">Tema 4: Comunicación en Quejas y Reclamaciones</h1>
-        <h4 class="titulo-2d"> Realizado por Tomás Casey :D </h4>
+      <h1 class="titulo-3d">Tema 4: Comunicación en Quejas y Reclamaciones📬</h1>
+        <h4 class="titulo-2d"> Realizado por Tomás Casey😊</h4>
     </div>
 <!-- Botón flotante izquierdo (Tema 2) -->
 <button class="boton-flotante izquierda" onclick="window.location.href='tema3.html'">
@@ -226,58 +288,131 @@
   <!-- QUEJA -->
   <div class="tab-pane fade show active" id="queja" role="tabpanel">
     <div class="center-content">
-    <h3>¿Qué es una queja?</h3>
-    <p>Imagina que vas a un restaurante, te atienden mal... (explicación del contenido).</p>
-    <!-- Imagen -->
-    <div class="media-box mt-3">
-      <img src="https://diariocorreo.pe/resizer/x_h3O182nRfrcstp8IIRyb78VbA=/580x330/smart/filters:format(jpeg):quality(75)/arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/RLVJEEQAN5ARVB73JH45XBE6BA.jpg" alt="Ejemplo de queja" class="img-fluid rounded shadow">
-      <p class="text-muted small mt-2">Cliente insatisfecho en un restaurante.</p>
+      <h3 class="titulo-2d">¿Qué es una queja?</h3>
+
+      <!-- Carrusel estilizado -->
+      <div class="container my-5">
+        <div class="carousel-wrapper mx-auto shadow-lg rounded-4 p-0" style="width: 560px; height: 350px; overflow: hidden; border-radius: 20px; box-shadow: 0 0 20px rgba(0,0,0,0.2);">
+          <div id="carouselTema3" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+
+              <!-- Slide 1 -->
+              <div class="carousel-item active">
+                <img src="https://www.blogdeasisa.es/wp-content/uploads/2024/12/queja.jpg" class="d-block w-100" style="height: 350px; object-fit: cover;" alt="Slide 1">
+                <div class="carousel-caption d-block">
+                  <h5 class="caption-bg">Queja</h5>
+                  <p class="caption-bg">Es una manifestación de desagrado por parte del cliente, sin efectuar una reclamación formal.</p>
+                </div>
+              </div>
+
+              <!-- Slide 2 -->
+              <div class="carousel-item">
+                <img src="https://noyb.eu/sites/default/files/styles/landscape_xl/public/2024-07/right%20to%20lodge%20a%20complaint%20header_1_0.png?itok=Z4ahh_yV" class="d-block w-100" style="height: 350px; object-fit: cover;" alt="Slide 2">
+                <div class="carousel-caption d-block">
+                  <h5 class="caption-bg">¿Qué es una reclamación?</h5>
+                  <p class="caption-bg">Es un escrito formal por el cual el cliente solicita una compensación, en consecuencia a una discrepancia.</p>
+                </div>
+              </div>
+
+              <!-- Slide 3 -->
+              <div class="carousel-item">
+                <img src="https://abogalo.com/wp-content/uploads/2020/10/AdobeStock_375517567.jpeg" class="d-block w-100" style="height: 350px; object-fit: cover;" alt="Slide 3">
+                <div class="carousel-caption d-block">
+                  <h5 class="caption-bg">¿Qué es una denuncia?</h5>
+                  <p class="caption-bg">Comunicación que un consumidor dirige a la administración para informar acerca de unos hechos que pueden constituir una infracción administrativa en materia de consumo.</p>
+                </div>
+              </div>
+            </div>
+            <!-- Controles -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselTema3" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselTema3" data-bs-slide="next">
+              <span class="carousel-control-next-icon"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Título debajo del carrusel -->
+<h3 class="titulo-2d mt-4 text-center">Video explicativo</h3>
+
+<!-- Video incrustado a tamaño proporcional -->
+<div class="d-flex justify-content-center">
+  <div style="position: relative; width: 100%; max-width: 560px; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 20px; box-shadow: 0 0 20px rgba(0,0,0,0.2);">
+    <iframe src="https://www.youtube.com/embed/5kJ6LZkNCwc" 
+            title="Video explicativo" 
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" 
+            allowfullscreen>
+    </iframe>
+  </div>
+</div>
+
+</div><!-- 🔁 AQUÍ CIERRA SOLO LA PESTAÑA DE QUEJA -->
+
+<!-- TIPOS -->
+<div class="tab-pane fade" id="tipos" role="tabpanel">
+    <div class="center-tab-content">
+                <h3 class="titulo-2d">Diferencias entre queja, reclamación y denuncia</h3>
+        <ul>
+            <li><strong>Queja:</strong> No exige compensación. Es para informar un mal servicio.</li>
+            <li><strong>Reclamación:</strong> Buscas que se repare un daño o error.</li>
+            <li><strong>Denuncia:</strong> Cuando la conducta puede ser ilegal o perjudicar a más personas.</li>
+        </ul>
+
+  <!-- Imagen ilustrativa -->
+  <div class="text-center mt-4">
+    <img src="https://www.reclamapormi.com/wp-content/uploads/2023/07/CAB_tIPOS_DE_RECLAMACIONES.png" alt="Ilustración tipos" class="img-fluid rounded shadow" style="max-width: 600px;">
+    <p class="mt-2 text-muted">Imagen representativa de los distintos tipos de comunicación de conflictos.</p>
+  </div>
     </div>
 
-    <!-- Video (con IFRAME de YouTube) -->
-    <div class="media-box mt-4">
-      <iframe width="1280" height="720" src="https://www.youtube.com/embed/5kJ6LZkNCwc" title="Video explicativo de queja" class="rounded shadow" allowfullscreen></iframe>
-      <p class="text-muted small mt-2">Video que muestra una queja en la práctica.</p>
-    </div>
-    </div>
-  </div>
-
-  <!-- TIPOS -->
-  <div class="tab-pane fade" id="tipos" role="tabpanel">
-    <h3>Diferencias entre queja, reclamación y denuncia</h3>
-    <ul>
-      <li><strong>Queja:</strong> No exige compensación. Es para informar un mal servicio.</li>
-      <li><strong>Reclamación:</strong> Buscas que se repare un daño o error.</li>
-      <li><strong>Denuncia:</strong> Cuando la conducta puede ser ilegal o perjudicar a más personas.</li>
-    </ul>
-  </div>
+</div>
 
   <!-- CONSULTAS -->
   <div class="tab-pane fade" id="consultas" role="tabpanel">
-    <h3>Consultas y causas más comunes</h3>
+    <div class="center-tab-content">
+        <h3 class="titulo-2d">Consultas y causas más comunes</h3>
     <p>Antes de reclamar, muchas veces consultamos dudas. Lo hacemos en organismos o asociaciones de consumidores.</p>
     <p>Las principales causas de quejas:</p>
     <ul>
-      <li>Precio mal informado</li>
-      <li>Producto de baja calidad</li>
-      <li>Mal servicio</li>
+      <li>➤ Precio mal informado</li>
+      <li>➤ Producto de baja calidad</li>
+      <li>➤ Mal servicio</li>
     </ul>
+
+      <!-- Imagen ilustrativa -->
+    <div class="text-center mt-4">
+        <img src="https://www.bancognb.com.pe/web/images/peru/img-secciones/banca-empresas/banca_empresas.jpg" alt="Ilustración tipos" class="img-fluid rounded shadow" style="max-width: 600px;">
+        <p class="mt-2 text-muted">Imagen representativa de los distintos tipos de comunicación de conflictos.</p>
+    </div>
+    </div>
+
   </div>
 
   <!-- HOJA -->
   <div class="tab-pane fade" id="hoja" role="tabpanel">
-    <h3>Hoja de Reclamaciones</h3>
+    <div class="center-tab-content">
+        <h3 class="titulo-2d">Hoja de Reclamaciones</h3>
     <p>Es un documento oficial para formalizar una queja o reclamación.</p>
     <ul>
       <li>Debe estar disponible en todos los comercios.</li>
       <li>Se entrega gratis y sin trabas.</li>
       <li>Se queda una copia el cliente, otra la empresa y otra la Administración.</li>
     </ul>
+
+        <div class="text-center mt-4">
+        <img src="https://www.consumoteca.com/wp-content/uploads/HOJAS_RECLAMACIONES-VALENCIA.jpg" alt="Ilustración tipos" class="img-fluid rounded shadow" style="max-width: 600px;">
+        <p class="mt-2 text-muted">Imagen representativa de los distintos tipos de comunicación de conflictos.</p>
+        </div>
+    </div>
+
   </div>
 
   <!-- COMUNICACION -->
   <div class="tab-pane fade" id="comunicacion" role="tabpanel">
-    <h3>La clave está en cómo te comunicas</h3>
+    <div class="center-tab-content">
+        <h3 class="titulo-2d">La clave está en cómo te comunicas</h3>
     <p>Una buena comunicación es esencial para resolver conflictos de consumo.</p>
     <ul>
       <li><strong>Emisor:</strong> Quien envía el mensaje (tú).</li>
@@ -286,16 +421,23 @@
       <li><strong>Canal:</strong> Cómo se dice (presencial, email, teléfono...).</li>
       <li><strong>Retroalimentación:</strong> La respuesta recibida.</li>
     </ul>
+        <div class="text-center mt-4">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTg0Degi-BQUiSf6QV8KWvlW85PJiQHKFhkDw&s" alt="Ilustración tipos" class="img-fluid rounded shadow" style="max-width: 600px;">
+        <p class="mt-2 text-muted">Imagen representativa de los distintos tipos de comunicación de conflictos.</p>
+        </div>
     <p>Recuerda que también comunicas con tu tono de voz, gestos, expresiones...</p>
+    </div>
+
   </div>
 
   <!-- JUEGO -->
-  <div class="tab-pane fade" id="juego" role="tabpanel">
-    <h3>Juego Didáctico</h3>
+   <div class="center-tab-content">
+      <div class="tab-pane fade" id="juego" role="tabpanel">
+    <h3 class="titulo-2d">Juego Didáctico</h3>
     <p>Pon a prueba lo que has aprendido jugando.</p>
-    <a href="juego_tema3.html" class="btn btn-success">Jugar ahora</a>
-  </div>
-
+    <a href="https://wordwall.net/resource/92354982/tema-4-comunicaci%c3%b3n-en-quejas-y-reclamaciones" class="btn btn-success">Jugar ahora</a>
+    </div>
+   </div>
 </div>
 
   </div>
